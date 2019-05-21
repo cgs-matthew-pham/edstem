@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	var root = rootPath();
-	console.log(rootPath);
+	console.log(root);
 	$("a").each(function() {
 		let url = $(this).attr("href");
 		if (url.startsWith("/")) {
