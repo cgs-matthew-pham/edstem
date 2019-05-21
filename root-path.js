@@ -4,8 +4,8 @@ $(document).ready(function(){
 	$("a").each(function() {
 		let url = $(this).attr("href");
 		if (url.startsWith("/")) {
-			console.log("Replacing " + url + " with " + rootPath);
-			let newUrl = url.replace("/", rootPath);
+			console.log("Replacing " + url + " with " + root);
+			let newUrl = url.replace("/", root);
 			console.log(newUrl);
 			$(this).attr("href", newUrl);
 		};
