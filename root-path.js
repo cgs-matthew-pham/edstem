@@ -1,9 +1,17 @@
-var base = document.createElement("base");
-base.setAttribute("href", rootPath());
-document.head.appendChild(base);
+$(document).ready(function(){
+	var root = rootPath();
+	console.log(rootPath);
+	$("a").each(function() {
+		let url = $(this).attr("href");
+		if (url.startsWith("/")) {
+			console.log("Replacing " + url + " with " + rootPath);
+			let newUrl = url.replace("/", rootPath);
+			console.log(newUrl);
+			$(this).attr("href", newUrl);
+		};
+	})
+});
 
 function rootPath() {
-  var path=document.URL.substring(0,document.URL.indexOf("/", 30))+"/";
-  console.log(path);
-  return path;
+	return document.URL.substring(0,document.URL.indexOf("/", 30)) + "/";
 }
